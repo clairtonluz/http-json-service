@@ -22,6 +22,12 @@ const customStatus = process.env.RESPONSE_STATUS ? parseInt(process.env.RESPONSE
 
 app.use(express.json());
 
+// Endpoint para saúde do serviço
+app.get('/health', (req, res) => {
+    res.status(200).send('OK'); // Resposta sempre 200
+  });
+
+// Endpoint padrão para todas as outras requisições
 app.all('*', (req, res) => {
   res.status(customStatus).json(customMessage);
 });
