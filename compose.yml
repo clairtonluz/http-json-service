@@ -1,0 +1,12 @@
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      # Variável opcional para personalizar a mensagem de resposta
+      RESPONSE_MESSAGE: '{"message": "Atualize o app para a versão mais recente", "info": "Nova versão disponível"}'
+      
+      # Variável opcional para personalizar o código de status HTTP
+      RESPONSE_STATUS: 426
